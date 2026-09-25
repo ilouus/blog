@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#1b2530" />
+    <meta name="description" content="Bakı tıxacından çıxmağa çalış: qonşu sürücüdən yol istə, zolaq dəyiş, dönüşə çat." />
+    <title>Qardaş, burax da!</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='18' y='6' width='28' height='52' rx='9' fill='%2318cfc3'/%3E%3Crect x='22' y='18' width='20' height='9' rx='2' fill='%2326303a'/%3E%3Crect x='22' y='40' width='20' height='7' rx='2' fill='%2326303a'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div id="app">
+      <header id="hud" class="hidden" aria-live="off">
+        <div class="hud-row">
+          <div class="nav-pill" title="Naviqator">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 21l8-4 8 4z" fill="currentColor" /></svg>
+            <span>Çatmağa <b>12 dəqiqə</b></span>
+          </div>
+          <div class="hud-btns">
+            <button id="btn-sound" class="icon-btn" type="button" aria-label="Səsi söndür">
+              <svg class="i-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" /><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" /></svg>
+              <svg class="i-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor" /><path d="m16 9 6 6m0-6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </button>
+            <button id="btn-pause" class="icon-btn" type="button" aria-label="Pauza">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" fill="currentColor" /><rect x="14" y="5" width="4" height="14" rx="1" fill="currentColor" /></svg>
+            </button>
+          </div>
+        </div>
+        <div class="hud-stats">
+          <div class="stat"><span class="lbl">Vaxt</span><span id="st-time" class="val">1:30</span></div>
+          <div class="stat"><span class="lbl">Dönüşə</span><span id="st-dist" class="val">300 m</span></div>
+          <div class="stat"><span class="lbl">Xal</span><span id="st-score" class="val">0</span></div>
+          <div class="stat stress"><span class="lbl">Əsəb</span><div class="bar"><i id="st-stress"></i></div></div>
+        </div>
+      </header>
+
+      <main id="stage">
+        <canvas id="cv" aria-label="Oyun səhnəsi"></canvas>
+        <div id="hint" class="hint hidden" role="status"></div>
+      </main>
+
+      <footer id="controls" class="hidden">
+        <button class="ctl arrow" data-act="left" type="button" aria-label="Sola">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <kbd>←</kbd>
+        </button>
+        <button class="ctl arrow" data-act="right" type="button" aria-label="Sağa">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg>
+          <kbd>→</kbd>
+        </button>
+        <button class="ctl honk" data-act="honk" type="button"><span>Siqnal</span><kbd>H</kbd></button>
+        <button class="ctl wave" data-act="wave" type="button"><span>Əl elə</span><kbd>E</kbd></button>
+        <button class="ctl thank" data-act="thank" type="button"><span>Sağ ol</span><kbd>T</kbd></button>
+        <button class="ctl merge" data-act="merge" type="button"><span>Keç</span><kbd>Space</kbd></button>
+      </footer>
+
+      <section id="screen-start" class="overlay">
+        <div class="card start-card">
+          <h1>Qardaş, burax&nbsp;da!</h1>
+          <p class="sub">Bakı tıxacından çıxmağa çalış.</p>
+          <button id="btn-play" class="btn primary big" type="button">Oyna</button>
+          <p id="start-best" class="best"></p>
+          <p class="keys">Klaviatura: ← → istiqamət · H siqnal · E əl elə · Space keç · T sağ ol</p>
+        </div>
+      </section>
+
+      <section id="screen-pause" class="overlay hidden">
+        <div class="card">
+          <h2>Pauza</h2>
+          <p class="sub">Tıxac da gözləyir.</p>
+          <button id="btn-resume" class="btn primary" type="button">Davam et</button>
+          <button id="btn-restart" class="btn" type="button">Yenidən başla</button>
+        </div>
+      </section>
+
+      <section id="screen-result" class="overlay hidden">
+        <div class="card result-card">
+          <h2 id="res-title"></h2>
+          <ul id="res-lines" class="res-lines"></ul>
+          <div class="res-score">
+            <div><span class="lbl">Xal</span><b id="res-score">0</b></div>
+            <div><span class="lbl">Ən yaxşı</span><b id="res-best">0</b></div>
+          </div>
+          <p id="res-record" class="record hidden">Yeni rekord!</p>
+          <button id="btn-again" class="btn primary" type="button">Bir də oyna</button>
+          <button id="btn-share" class="btn" type="button">Dostuna göndər</button>
+          <p id="share-msg" class="share-msg" role="status"></p>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
