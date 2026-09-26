@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ağıllı Nağıllar — Hekayə quran dizayn studiyası</title>
+  <meta name="description" content="Ağıllı Nağıllar — brendlər, məhsullar və mədəniyyət üçün hekayə quran müstəqil dizayn studiyası.">
+  <meta name="theme-color" content="#e4f309">
+  <link rel="icon" type="image/svg+xml" href="assets/brand/mark-black-square.svg">
+  <link rel="preload" href="assets/fonts/AghilliNaghillar.otf" as="font" type="font/otf" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="importmap">
+    { "imports": { "three": "./assets/vendor/three.module.min.js" } }
+  </script>
+</head>
+<body class="is-loading">
+
+  <!-- Loader -->
+  <div class="loader" aria-hidden="true">
+    <img class="loader__mark" src="assets/brand/spiral-ink.svg" alt="">
+    <span class="loader__count">0</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <a class="header__logo" href="#top" aria-label="Ağıllı Nağıllar — ana səhifə">
+      <span class="header__mark">
+        <img src="assets/brand/spiral-ink.svg" alt="" class="header__spiral is-ink">
+        <img src="assets/brand/spiral-lime.svg" alt="" class="header__spiral is-light">
+      </span>
+      <span class="header__type">
+        <img src="assets/brand/wordmark-ink.svg" alt="Ağıllı Nağıllar" class="header__wordmark is-ink">
+        <img src="assets/brand/wordmark-white.svg" alt="" class="header__wordmark is-light">
+      </span>
+    </a>
+    <nav class="header__nav" aria-label="Əsas menyu">
+      <a href="#isler">İşlər</a>
+      <a href="#studiya">Studiya</a>
+      <a href="#personajlar">Personajlar</a>
+      <a href="#jurnal">Jurnal</a>
+      <a href="#elaqe">Əlaqə</a>
+    </nav>
+    <button class="header__menu" aria-label="Menyu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-nav" aria-hidden="true">
+    <a href="#isler">İşlər</a>
+    <a href="#studiya">Studiya</a>
+    <a href="#personajlar">Personajlar</a>
+    <a href="#jurnal">Jurnal</a>
+    <a href="#elaqe">Əlaqə</a>
+  </div>
+
+  <main id="top">
+
+    <!-- Hero: live 3D scene -->
+    <section class="hero">
+      <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__fallback" aria-hidden="true"></div>
+      <div class="hero__meta">
+        <span>Müstəqil dizayn studiyası</span>
+        <span>Bakı, Azərbaycan</span>
+        <span class="js-clock">—</span>
+      </div>
+      <h1 class="hero__title">
+        <span class="line"><span>Hər brend</span></span>
+        <span class="line"><span>bir nağıldır.</span></span>
+      </h1>
+      <div class="hero__foot">
+        <p>Biz onu ağıllı danışırıq — strategiya, identika, personaj və hərəkət ilə.</p>
+        <a href="#isler" class="hero__scroll" aria-label="Aşağı sürüşdür">
+          <span>Sürüşdür</span>
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 4v16m0 0-7-7m7 7 7-7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Statement -->
+    <section class="statement" id="studiya">
+      <p class="statement__label"><img src="assets/brand/spiral-ink.svg" alt=""> Studiya</p>
+      <p class="statement__text js-words">
+        Ağıllı Nağıllar brendlər, məhsullar və mədəniyyət üçün hekayə quran müstəqil dizayn studiyasıdır. Strategiyanı, identikanı və hərəkəti bir dilə çeviririk — insanların xatırladığı, sevdiyi və başqasına danışdığı dilə.
+      </p>
+      <div class="statement__stats">
+        <div><strong data-count="48">0</strong><span>Danışılmış nağıl</span></div>
+        <div><strong data-count="10">0</strong><span>Qəhrəman personaj</span></div>
+        <div><strong data-count="7">0</strong><span>Ölkədə tərəfdaş</span></div>
+      </div>
+    </section>
+
+    <!-- Selected work -->
+    <section class="work" id="isler">
+      <div class="section-head">
+        <h2>Seçilmiş işlər</h2>
+        <span class="section-head__count">(06)</span>
+      </div>
+
+      <div class="work__grid">
+        <a href="#" class="card card--wide reveal" data-cursor="Bax">
+          <div class="card__media bg-lime">
+            <img class="card__logo" src="assets/brand/lockup-ink.svg" alt="">
+          </div>
+          <div class="card__info"><h3>Ağıllı Nağıllar</h3><span>Vizual identika</span><span>2026</span></div>
+        </a>
+
+        <a href="#" class="card reveal" data-cursor="Bax">
+          <div class="card__media bg-sky">
+            <div class="card__chars">
+              <img src="assets/characters/char-07.svg" alt="">
+              <img src="assets/characters/char-09.svg" alt="">
+            </div>
+          </div>
+          <div class="card__info"><h3>Qəhrəmanlar</h3><span>Personaj sistemi</span><span>2026</span></div>
+        </a>
+
+        <a href="#" class="card reveal" data-cursor="Bax">
+          <div class="card__media bg-ink">
+            <img class="card__spin" src="assets/brand/spiral-lime.svg" alt="">
+          </div>
+          <div class="card__info"><h3>Spiral</h3><span>Hərəkət dili</span><span>2026</span></div>
+        </a>
+
+        <a href="#" class="card reveal" data-cursor="Bax">
+          <div class="card__media bg-pink">
+            <img class="card__single" src="assets/characters/char-06.svg" alt="">
+          </div>
+          <div class="card__info"><h3>Gün batanda</h3><span>Kampaniya</span><span>2025</span></div>
+        </a>
+
+        <a href="#" class="card reveal" data-cursor="Bax">
+          <div class="card__media bg-lav">
+            <div class="blob-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="card__info"><h3>Maye formalar</h3><span>3D / CGI</span><span>2025</span></div>
+        </a>
+
+        <a href="#" class="card card--wide reveal" data-cursor="Bax">
+          <div class="card__media bg-ink card__media--marquee">
+            <div class="mini-marquee"><div>
+              <img src="assets/brand/wordmark-lime.svg" alt=""><img src="assets/brand/wordmark-lime.svg" alt=""><img src="assets/brand/wordmark-lime.svg" alt=""><img src="assets/brand/wordmark-lime.svg" alt="">
+            </div></div>
+          </div>
+          <div class="card__info"><h3>Nağıl Gecələri</h3><span>Tədbir brendinqi</span><span>2025</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <section class="marquee" aria-label="Xidmətlər">
+      <div class="marquee__track">
+        <div class="marquee__row">
+          <span>Strategiya</span><img src="assets/brand/spiral-ink.svg" alt="">
+          <span>İdentika</span><img src="assets/brand/spiral-ink.svg" alt="">
+          <span>Personaj</span><img src="assets/brand/spiral-ink.svg" alt="">
+          <span>Hərəkət</span><img src="assets/brand/spiral-ink.svg" alt="">
+          <span>3D</span><img src="assets/brand/spiral-ink.svg" alt="">
+          <span>Rəqəmsal</span><img src="assets/brand/spiral-ink.svg" alt="">
+        </div>
+        <div class="marquee__row" aria-hidden="true">
+          <span>Strategiya</span><img src="assets/brand/spiral-ink.svg" alt="">
+          <span>İdentika</span><img src="assets/brand/spiral-ink.svg" alt="">
+          <span>Personaj</span><img src="assets/brand/spiral-ink.svg" alt="">
+          <span>Hərəkət</span><img src="assets/brand/spiral-ink.svg" alt="">
+          <span>3D</span><img src="assets/brand/spiral-ink.svg" alt="">
+          <span>Rəqəmsal</span><img src="assets/brand/spiral-ink.svg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- Characters -->
+    <section class="chars" id="personajlar">
+      <div class="section-head">
+        <h2>Tanış olun:<br>qəhrəmanlarımız</h2>
+        <p class="chars__lede">On personaj, bir ailə. Hər biri fərqli xasiyyət, fərqli səs — amma hamısı eyni nağılı danışır. Birinin üzərinə gəlin.</p>
+      </div>
+      <div class="chars__row" data-cursor="Sürüşdür">
+        <figure class="char"><img src="assets/characters/char-01.svg" alt="Dairəvi başlı, günəş eynəkli personaj"><figcaption>Cəsur</figcaption></figure>
+        <figure class="char"><img src="assets/characters/char-02.svg" alt="Kvadrat başlı, yuxulu personaj"><figcaption>Sakit</figcaption></figure>
+        <figure class="char"><img src="assets/characters/char-03.svg" alt="Üçbucaq başlı, oturan personaj"><figcaption>Xəyalpərəst</figcaption></figure>
+        <figure class="char"><img src="assets/characters/char-04.svg" alt="Laym üçbucaq başlı personaj"><figcaption>Maraqlı</figcaption></figure>
+        <figure class="char"><img src="assets/characters/char-05.svg" alt="Qara üçbucaq başlı personaj"><figcaption>Müdrik</figcaption></figure>
+        <figure class="char"><img src="assets/characters/char-06.svg" alt="Çəhrayı dairə başlı personaj"><figcaption>Şux</figcaption></figure>
+        <figure class="char"><img src="assets/characters/char-07.svg" alt="Mavi kvadrat başlı personaj"><figcaption>Xəfif</figcaption></figure>
+        <figure class="char"><img src="assets/characters/char-08.svg" alt="Laym üçbucaq başlı oturan personaj"><figcaption>Oynaq</figcaption></figure>
+        <figure class="char"><img src="assets/characters/char-09.svg" alt="Mavi dairə başlı personaj"><figcaption>Sərin</figcaption></figure>
+        <figure class="char"><img src="assets/characters/char-10.svg" alt="Qara dairə başlı personaj"><figcaption>Qətiyyətli</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+      <div class="section-head">
+        <h2>Nə edirik</h2>
+        <span class="section-head__count">(04)</span>
+      </div>
+      <ul class="services__list">
+        <li class="service">
+          <button class="service__head" aria-expanded="false">
+            <span class="service__num">01</span><span class="service__title">Brend strategiyası</span><span class="service__icon"></span>
+          </button>
+          <div class="service__body"><div>
+            <p>Brendin nəyə inandığını, kimə danışdığını və niyə fərqli olduğunu tapırıq. Sonra bunu hər kəsin başa düşəcəyi sadə bir hekayəyə çeviririk.</p>
+            <ul><li>Mövqeləndirmə</li><li>Ad və ton</li><li>Hekayə arxitekturası</li><li>Auditoriya araşdırması</li></ul>
+          </div></div>
+        </li>
+        <li class="service">
+          <button class="service__head" aria-expanded="false">
+            <span class="service__num">02</span><span class="service__title">Vizual identika</span><span class="service__icon"></span>
+          </button>
+          <div class="service__body"><div>
+            <p>Loqodan şriftə, rəngdən qrid sisteminə qədər — tanınan, çevik və uzunömürlü identika sistemləri qururuq.</p>
+            <ul><li>Loqo və işarə</li><li>Xüsusi şrift</li><li>Brend kitabı</li><li>Qablaşdırma</li></ul>
+          </div></div>
+        </li>
+        <li class="service">
+          <button class="service__head" aria-expanded="false">
+            <span class="service__num">03</span><span class="service__title">Personaj &amp; illüstrasiya</span><span class="service__icon"></span>
+          </button>
+          <div class="service__body"><div>
+            <p>Brendə üz və xasiyyət verən personaj ailələri yaradırıq — hər platformada yaşaya bilən, sadə formalı qəhrəmanlar.</p>
+            <ul><li>Personaj dizaynı</li><li>İllüstrasiya sistemi</li><li>Stiker və emoji</li><li>Maskotlar</li></ul>
+          </div></div>
+        </li>
+        <li class="service">
+          <button class="service__head" aria-expanded="false">
+            <span class="service__num">04</span><span class="service__title">Hərəkət &amp; 3D</span><span class="service__icon"></span>
+          </button>
+          <div class="service__body"><div>
+            <p>Brendi hərəkətə gətiririk: loqo animasiyaları, 3D səhnələr, sosial media üçün qısa filmlər və interaktiv təcrübələr.</p>
+            <ul><li>Motion dizayn</li><li>3D / CGI</li><li>Veb təcrübələri</li><li>Səs dizaynı</li></ul>
+          </div></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Journal -->
+    <section class="journal" id="jurnal">
+      <div class="section-head">
+        <h2>Jurnal</h2>
+        <span class="section-head__count">(05)</span>
+      </div>
+      <ul class="journal__list">
+        <li><a href="#" data-preview="lime" data-char="04"><span class="j-date">12.09.2026</span><span class="j-title">Niyə hər brendə bir qəhrəman lazımdır?</span><span class="j-tag">Esse</span></a></li>
+        <li><a href="#" data-preview="sky" data-char="02"><span class="j-date">28.08.2026</span><span class="j-title">Spiralın hekayəsi: işarə necə doğuldu</span><span class="j-tag">Proses</span></a></li>
+        <li><a href="#" data-preview="pink" data-char="06"><span class="j-date">03.08.2026</span><span class="j-title">Azərbaycan hərfləri ilə şrift dizaynı: ə, ğ, ı</span><span class="j-tag">Tipoqrafiya</span></a></li>
+        <li><a href="#" data-preview="ink" data-char="lime"><span class="j-date">17.07.2026</span><span class="j-title">Laym rəngi niyə seçdik</span><span class="j-tag">Rəng</span></a></li>
+        <li><a href="#" data-preview="lav" data-char="03"><span class="j-date">01.07.2026</span><span class="j-title">Maye formalar: 3D üslubumuzun arxasında</span><span class="j-tag">3D</span></a></li>
+      </ul>
+      <div class="journal__preview" aria-hidden="true"><img alt=""></div>
+    </section>
+
+  </main>
+
+  <!-- Footer / contact -->
+  <footer class="footer" id="elaqe">
+    <div class="footer__cta">
+      <p class="footer__kicker">Yeni layihə?</p>
+      <h2>Gəlin nağılınızı<br>birlikdə yazaq.</h2>
+      <a class="footer__mail" href="mailto:salam@agillinagillar.com" data-cursor="Yaz">salam@agillinagillar.com</a>
+    </div>
+    <div class="footer__cols">
+      <div><h4>Studiya</h4><p>Bakı, Azərbaycan<br><span class="js-clock">—</span> (GMT+4)</p></div>
+      <div><h4>Sosial</h4><p><a href="#">Instagram</a><br><a href="#">Behance</a><br><a href="#">LinkedIn</a></p></div>
+      <div><h4>Naviqasiya</h4><p><a href="#isler">İşlər</a><br><a href="#studiya">Studiya</a><br><a href="#jurnal">Jurnal</a></p></div>
+      <div class="footer__top"><a href="#top">Yuxarı ↑</a></div>
+    </div>
+    <img class="footer__wordmark" src="assets/brand/lockup-white.svg" alt="Ağıllı Nağıllar">
+    <div class="footer__legal"><span>© <span class="js-year">2026</span> Ağıllı Nağıllar</span><span>Bütün hüquqlar qorunur</span></div>
+  </footer>
+
+  <div class="cursor" aria-hidden="true"><span></span></div>
+
+  <script src="assets/js/main.js" defer></script>
+  <script type="module" src="assets/js/scene.js"></script>
+</body>
+</html>
